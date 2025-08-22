@@ -1,0 +1,272 @@
+.shadow-brand-sm {
+  box-shadow: 0 3px 6px var(--c-green-100);
+}
+
+/*
+  Menubar Radix UI
+*/
+
+.MenubarTrigger {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff;
+  background-color: var(--c-secondary-light);
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+
+.MenubarContent,
+.MenubarSubContent {
+  position: absolute;
+  top: 20px;
+  min-width: 220px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35),
+    0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.MenubarItem {
+  font-weight: 700;
+  padding: 10px;
+}
+
+.MenubarSubTrigger.MenubarTriggerButton {
+  display: block;
+}
+
+/* .MenubarContent:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  border-bottom: 16px solid #fff;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+} */
+
+.TabsList {
+  text-align: right;
+  color: var(--c-gray);
+  padding-bottom: 20px;
+}
+
+.TabsTrigger {
+  padding: 12px 20px;
+  font-weight: 600;
+  color: var(--c-gray-500);
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.TabsTrigger[data-state="active"] {
+  color: var(--c-green-500);
+  background-color: var(--c-green-100);
+}
+
+.AccordionRoot {
+  border-radius: 6px;
+  width: 300px;
+  /* background-color: var(--mauve-6); */
+  /* background-color: #3c393f; */
+  box-shadow: 0 2px 10px var(--black-a4);
+}
+
+.AccordionItem {
+  overflow: hidden;
+  margin-top: 1px;
+}
+
+.AccordionItem:first-child {
+  margin-top: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.AccordionItem:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.AccordionItem:last-child .AccordionContent {
+  padding-bottom: 8px;
+}
+
+.AccordionItem:focus-within {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 2px #eeeef0;
+}
+
+.AccordionHeader {
+  display: flex;
+}
+
+.AccordionTrigger {
+  font-family: inherit;
+  background-color: transparent;
+  padding: 0 20px;
+  height: 45px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--violet-11);
+  /* box-shadow: 0 1px 0 #3c393f; */
+  background-color: white;
+  font-weight: 700;
+}
+
+.AccordionTrigger:hover {
+  /* background-color: #1a191b; */
+}
+
+.AccordionContent {
+  overflow: hidden;
+  font-size: 15px;
+  /* color: var(--mauve-11); */
+  /* background-color: var(--mauve-2); */
+  padding-left: 35px;
+}
+.AccordionContent[data-state="open"] {
+  animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+.AccordionContent[data-state="closed"] {
+  animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.AccordionContentText {
+  padding: 15px 20px;
+}
+
+.AccordionChevron {
+  /* color: var(--violet-10); */
+  width: 15px;
+  height: 15px;
+  stroke-width: 2.5;
+  color: var(--c-green-500);
+  transition: transform 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  margin-top: 2px;
+}
+.AccordionTrigger[data-state="open"] > .AccordionChevron {
+  transform: rotate(180deg);
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.SelectTrigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 13px;
+  line-height: 1;
+  height: 35px;
+  gap: 5px;
+  background-color: white;
+  /* color: var(--violet-11); */
+  /* box-shadow: 0 2px 10px var(--black-a7); */
+}
+.SelectTrigger:hover {
+  /* background-color: var(--mauve-3); */
+}
+.SelectTrigger:focus {
+  box-shadow: 0 0 0 2px black;
+}
+.SelectTrigger[data-placeholder] {
+  /* color: var(--violet-9); */
+}
+
+.SelectIcon {
+  /* color: Var(--violet-11); */
+}
+
+.SelectContent {
+  overflow: hidden;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35),
+    0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+}
+
+.SelectViewport {
+  padding: 5px;
+}
+
+.SelectItem {
+  font-size: 13px;
+  line-height: 1;
+  /* color: var(--violet-11); */
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 35px 0 25px;
+  position: relative;
+  user-select: none;
+}
+.SelectItem[data-disabled] {
+  /* color: var(--mauve-8); */
+  pointer-events: none;
+}
+.SelectItem[data-highlighted] {
+  outline: none;
+}
+
+.SelectLabel {
+  padding: 0 25px;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+.SelectSeparator {
+  height: 1px;
+  margin: 5px;
+}
+
+.SelectItemIndicator {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SelectScrollButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  background-color: white;
+  /* color: var(--violet-11); */
+  cursor: default;
+}

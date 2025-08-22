@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  --radix-accordion-content-height: 50px;
+  --c-green-50: rgba(222, 249, 236, 0.5);
+  --c-green-100: rgb(222, 249, 236);
+  --c-green-200: rgb(188, 227, 201);
+  --c-green-400: rgba(59, 183, 126, 0.8);
+  --c-green-500: rgb(59, 183, 126);
+
+  --c-red-10: rgba(221, 51, 51, 0.1);
+  --c-red: rgb(221, 51, 51);
+
+  --c-blue-30: rgba(103, 188, 238, 0.1);
+  --c-blue-100: rgb(103, 188, 238);
+  --c-blue-500: rgb(23, 116, 178);
+
+  --c-purple-30: rgba(181, 172, 250, 0.1);
+  --c-goldenrod: rgb(188, 145, 26);
+
+  --c-gray-200: rgba(153, 161, 175, 0.4);
+  --c-gray-500: rgb(153, 161, 175);
+
+  /* COLORS */
+  --c-primary: rgb(43, 127, 255);
+  --c-primary-light: rgb(85, 152, 255);
+  --c-primary-100: rgba(43, 127, 255, 0.4);
+
+  --c-secondary: rgb(245, 0, 87);
+  --c-secondary-light: rgb(247, 51, 120);
+
+  --border-radius: 4px;
+}
+
+.box {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.popular-products__grid {
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+}
+
+.popular-products__card {
+  max-width: 50%;
+}
