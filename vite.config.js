@@ -3,12 +3,14 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  base: "/ecommerce-client/",
   plugins: [react(), tailwindcss()],
   server: {
     port: 5173,
     proxy: {
       "/api": {
-        target: "http://localhost:1337",
+        // target: "http://localhost:1337",
+        target: "https://willing-deer-75054c8f0a.strapiapp.com",
         changeOrigin: true,
         secure: false,
       },
