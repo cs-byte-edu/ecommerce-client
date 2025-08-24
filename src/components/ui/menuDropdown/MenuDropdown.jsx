@@ -25,16 +25,25 @@ const MenuDropdown = ({ triggerTitle }) => {
       <DropdownMenu.Portal>
         <DropdownMenu.Content className="DropdownMenuContent" sideOffset={5}>
           <DropdownMenu.Item className="DropdownMenuItem">
-            <img src={phoneImg} alt="phone image" /> + 1 800 777 88 99
+            <img src={phoneImg} alt="phone image" width={28} height={28} /> + 1
+            800 777 88 99
           </DropdownMenu.Item>
           <DropdownMenu.Item className="DropdownMenuItem">
-            <img src={telegramLogo} alt="telegram logo" /> @telegram_account
+            <img
+              src={telegramLogo}
+              alt="telegram logo"
+              width={30}
+              height={30}
+            />{" "}
+            @telegram_account
           </DropdownMenu.Item>
           <DropdownMenu.Item className="DropdownMenuItem" disabled>
-            <img src={emailImg} alt="email image" /> nutrition@gmail.com
+            <img src={emailImg} alt="email image" width={28} height={28} />{" "}
+            nutrition@gmail.com
           </DropdownMenu.Item>
           <DropdownMenu.Item className="DropdownMenuItem" disabled>
-            <img src={viberLogo} alt="viber logo" /> @viber_account
+            <img src={viberLogo} alt="viber logo" width={28} height={28} />{" "}
+            @viber_account
           </DropdownMenu.Item>
           <DropdownMenu.Arrow className="DropdownMenuArrow" />
         </DropdownMenu.Content>

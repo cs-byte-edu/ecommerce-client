@@ -31,7 +31,7 @@ export const pageService = {
   },
 
   fetchPage: async (slug) => {
-    const { data } = (await api.get(`${slug}?populate=*`)).data;
+    const { data } = (await api.get(`${slug}`)).data;
     return data;
   },
 };

@@ -19,7 +19,7 @@ export const HeaderTop = () => {
   };
 
   return (
-    <div className="box lg:py-2">
+    <div className="box lg:py-2 hidden lg:block">
       <div className="flex items-center justify-between gap-4 text-sm text-white leading-tight">
         <div className="flex items-center gap-4">
           <Link to="delivery-and-payment" className="flex items-center gap-2">
@@ -36,10 +36,10 @@ export const HeaderTop = () => {
           </Link>
         </div>
         <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <PhoneIcon className="size-6" />
             <span className="">+1800900122</span>
-          </div>
+          </div> */}
           <div className="flex items-center gap-2">
             <ChatBubbleLeftRightIcon className="size-6" />
             <MenuDropdown triggerTitle={"Contact us"} />

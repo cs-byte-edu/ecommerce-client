@@ -11,13 +11,15 @@ const BLOCK_COMPONENTS = {
   "blocks.category-card": CardGrid,
   "layout.section-benefits": CardGrid,
   "blocks.category-tabs": PopularProducts,
-  "layout.section-category": ProductGrid,
+  "sections.section-category": ProductGrid,
 };
 
 export const PageBuilder = ({ pageData }) => {
   if (!pageData) {
     return <div className="text-center py-8">No content available</div>;
   }
+
+  console.log("page builder pagedata", pageData);
 
   const blocks = pageData.map((blockType) => {
     const Component = BLOCK_COMPONENTS[blockType.__component];
@@ -58,14 +60,14 @@ export const PageBuilder = ({ pageData }) => {
         break;
       }
 
-      case "layout.section-category": {
+      case "sections.section-category": {
         sectionHeading = {
           section_heading: blockType.section_heading,
           section_description: blockType.section_description,
         };
 
         blockData = {
-          products: blockType.category.products,
+          products: blockType.section_categories[0].products,
           renderContent: (product) => (
             <Product product={product} key={product.documentId} />
           ),

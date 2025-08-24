@@ -12,13 +12,13 @@ export const ProductPurchase = ({ product }) => {
   };
   return (
     <div className="flex items-center justify-between gap-[15px] pt-[15px] font-semibold text-[var(--c-green-500)]">
-      <b className="text-xl font-semibold">${product.price}</b>
+      <b className="text-xl font-semibold">${product.final_price}</b>
       <button
         onClick={handleAddToCart}
         className="z-10 flex items-center justify-center gap-[5px] py-[12px] px-[20px] rounded-[4px] bg-[var(--c-green-100)] hover:bg-[var(--c-green-400)] hover:text-white cursor-pointer"
       >
         <ShoppingCartIcon className="size-5" />
-        Add {product.id}
+        Add
       </button>
     </div>
   );

@@ -27,3 +27,26 @@ export const AuthGuard = ({ children }) => {
 
   return <>{children}</>;
 };
+
+/* 
+export const ProtectedRoute = ({ 
+  children, 
+  redirectTo = '/login' 
+}: ProtectedRouteProps) => {
+  const { isAuthenticated, isInitialized } = useBoundStore((state) => ({
+    isAuthenticated: state.isAuthenticated,
+    isInitialized: state.isInitialized
+  }));
+
+  if (!isInitialized) {
+    return <div>Loading...</div>;
+  }
+
+
+  if (!isAuthenticated) {
+    return <Navigate to={redirectTo} replace />;
+  }
+
+  return <>{children}</>;
+};
+*/

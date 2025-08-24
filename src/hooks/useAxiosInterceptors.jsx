@@ -76,3 +76,41 @@ export const useAxiosInterceptors = () => {
     };
   }, []);
 };
+
+/* 
+export const useAxiosInterceptors = () => {
+  const token = useBoundStore((state) => state.token);
+  const logout = useBoundStore((state) => state.logout);
+
+  useEffect(() => {
+    const requestInterceptor = axios.interceptors.request.use(
+      (config) => {
+        if (token) {
+          config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+      },
+      (error) => Promise.reject(error)
+    );
+
+
+    const responseInterceptor = axios.interceptors.response.use(
+      (response) => response,
+      async (error) => {
+        if (error.response?.status === 401 && token) {
+          console.log('🔐 Token expired, logging out...');
+          await logout();
+          window.location.href = '/login';
+        }
+        return Promise.reject(error);
+      }
+    );
+
+    return () => {
+      axios.interceptors.request.eject(requestInterceptor);
+      axios.interceptors.response.eject(responseInterceptor);
+    };
+  }, [token, logout]);
+};
+
+*/

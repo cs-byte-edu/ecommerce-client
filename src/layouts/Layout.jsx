@@ -19,6 +19,7 @@ export const Layout = () => {
   // if (error)
   //   return <p className="text-red-500 text-2xl font-semibold">ERROR</p>;
   // if (loading) return <Spiner />;
+  console.log("navigation: ", navigation);
   return (
     <>
       <Header navItems={navigation} />
