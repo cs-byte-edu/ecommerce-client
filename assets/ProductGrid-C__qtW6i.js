@@ -1,0 +1,1 @@
+import{j as o}from"./index-uGnPBnOb.js";const s=({data:r,className:t=""})=>o.jsx("div",{className:`grid [grid-template-columns:repeat(auto-fit,minmax(200px,1fr))] gap-[20px] ${t}`,children:r.products.map(e=>r.renderContent(e))});export{s as default};
