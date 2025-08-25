@@ -22,11 +22,7 @@ const PopularProducts = memo(({ data }) => {
         data={{
           products: contentItem,
           renderContent: (item) => (
-            <ProductCard
-              key={item.documentId}
-              product={item}
-              className="popular-products__card"
-            />
+            <ProductCard key={item.documentId} product={item} className="" />
           ),
         }}
       />

@@ -1,5 +1,5 @@
 import { DropdownMenu } from "radix-ui";
-import { useState } from "react";
+// import { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import "./style.css";
 
@@ -9,9 +9,9 @@ import telegramLogo from "../../../assets/img/telegram.svg";
 import viberLogo from "../../../assets/img/viber.svg";
 
 const MenuDropdown = ({ triggerTitle }) => {
-  const [bookmarksChecked, setBookmarksChecked] = useState(true);
-  const [urlsChecked, setUrlsChecked] = useState(false);
-  const [person, setPerson] = useState("pedro");
+  // const [bookmarksChecked, setBookmarksChecked] = useState(true);
+  // const [urlsChecked, setUrlsChecked] = useState(false);
+  // const [person, setPerson] = useState("pedro");
 
   return (
     <DropdownMenu.Root>

@@ -1,4 +1,4 @@
-// import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 // import {
 //   ShoppingCartIcon,
 //   HeartIcon,
@@ -12,6 +12,7 @@ import { Badge } from "./Badge";
 import { useBoundStore } from "../store";
 
 import { CategoriesMenu } from "./ui/categoriesMenu/CategoriesMenu";
+import { DropdownMenu } from "radix-ui";
 
 // export const OLD___NavBar = ({ navItems }) => {
 //   const handleFilterChange = useCallback(() => {}, []);
@@ -84,8 +85,30 @@ import { CategoriesMenu } from "./ui/categoriesMenu/CategoriesMenu";
 //   );
 // };
 
+const MenuDropdown = ({ triggerTitle, children }) => {
+  return (
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger asChild>
+        <button
+          className="IconButton flex items-center text-white cursor-pointer bg-[var(--c-primary-light)] py-4 px-5 rounded-[4px]"
+          aria-label="Customise options"
+        >
+          <UserIcon className="size-6" />
+          {triggerTitle}
+        </button>
+      </DropdownMenu.Trigger>
+
+      <DropdownMenu.Portal>
+        <DropdownMenu.Content className="DropdownMenuContent" sideOffset={5}>
+          {children}
+        </DropdownMenu.Content>
+      </DropdownMenu.Portal>
+    </DropdownMenu.Root>
+  );
+};
+
 import { useState, useCallback } from "react";
-import { Link } from "react-router";
+
 import {
   UserIcon,
   ScaleIcon,
@@ -96,6 +119,8 @@ import {
 } from "@heroicons/react/24/outline";
 
 export const NavBar = ({ navItems }) => {
+  const navigate = useNavigate();
+  const { isAuthenticated, logout, user } = useBoundStore();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const handleFilterChange = useCallback(() => {}, []);
 
@@ -113,6 +138,11 @@ export const NavBar = ({ navItems }) => {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const handleLogout = async () => {
+    await logout();
+    navigate("/", { replace: true });
   };
 
   return (
@@ -136,13 +166,22 @@ export const NavBar = ({ navItems }) => {
             />
 
             <div className="flex items-center gap-4 text-base font-semibold">
-              <Link
-                to="/signin"
-                className="flex items-center gap-[5px] bg-[var(--c-primary-light)] py-3 px-5 rounded-[var(--border-radius)] font-normal cursor-pointer text-white"
-              >
-                <UserIcon className="size-6 text-white" />
-                Sign-in
-              </Link>
+              {isAuthenticated ? (
+                <MenuDropdown triggerTitle={user.username}>
+                  <DropdownMenu.Item>Account {user.username}</DropdownMenu.Item>
+                  <DropdownMenu.Item onClick={handleLogout}>
+                    Logout
+                  </DropdownMenu.Item>
+                </MenuDropdown>
+              ) : (
+                <Link
+                  to="/signin"
+                  className="flex items-center gap-[5px] bg-[var(--c-primary-light)] py-3 px-5 rounded-[var(--border-radius)] font-normal cursor-pointer text-white"
+                >
+                  <UserIcon className="size-6 text-white" />
+                  Sign-in
+                </Link>
+              )}
 
               <Link
                 to="/compare"

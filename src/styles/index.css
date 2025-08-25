@@ -43,7 +43,3 @@
 .popular-products__grid {
   grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
 }
-
-.popular-products__card {
-  max-width: 50%;
-}

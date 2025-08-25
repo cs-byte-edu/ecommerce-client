@@ -1,7 +1,8 @@
 import { CardInfo } from "./CardInfo";
 
 const CardGrid = ({ data }) => {
-  //   console.log("cardGridData: ", cardGridData, cardGridData[0].documentId);
+  console.log("cardGridData: ", data);
+  // return null;
   return (
     <section className="lg:pt-[60px] lg:pb-[60px] box">
       {data?.section_heading && (
